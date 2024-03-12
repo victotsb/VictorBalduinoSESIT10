@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../imagens/pf.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrap-everything{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4vh;
+}
+
+.wrap-img{
+    animation: fromTop 2s linear;
+}
+
+@keyframes fromTop {
+    0%{
+        opacity: 0.1;
+        transform: translateY(-200px);
+    }
+    100%{
+        opacity: 0.8;
+        transform: translateY(0px);
+    }
+}
+
+.img-style{
+    opacity: 0.8;
+    border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.wrap-p{
+    text-align: center;
+    width: 100%;
+}
+
+p{
+    color: #ffff;
+    font-family: "Kanit", sans-serif;
+    font-size: 3.5rem;
+    text-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+    transition: all 200ms linear;
+    animation: show 2s linear;
+    font-weight: 900;
+    letter-spacing: 10px;
+}
+
+@keyframes show {
+    from{
+        transform: translateY(200px);
+        opacity: 0.1;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.right-animation{
+    animation: left 2s linear;
+}
+
+.left-animation{
+    animation: right 2s linear;
+}
+
+@keyframes right {
+    from{
+        transform: translateX(-500px);
+        opacity: 0.1;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes left {
+    from{
+        transform: translateX(500px);
+        opacity: 0.1;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1024px){
+    body{
+        background-image: url("../imagens/pf.jpg");
+    }
+    .img-style{
+        width: 400px;
+        height: 400px;
+    }
+    p{
+        font-size: 8rem;
+        filter: blur(1px);
+        transition: all 200ms linear;
+        text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.9);
+    }
+    p:hover{
+        filter: blur(0px);
+        cursor: pointer;
+        transition: all 200ms linear;
+    }
+}

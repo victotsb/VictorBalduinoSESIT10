@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Pesca</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos para a aba lateral */
+        #sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #f1f1f1;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        #sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #000;
+            display: block;
+            transition: 0.3s;
+        }
+
+        #sidebar a:hover {
+            color: #007bff;
+        }
+
+        #sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            font-size: 36px;
+            margin-right: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="btn-group" role="group" aria-label="Menu de navegação">
+            <button type="button" onclick="window.location.href='../menu/page.html'" class="btn btn-primary">MENU</button>
+            <button type="button" onclick="window.location.href='../home/page.html'" class="btn btn-primary">HOME</button>
+            <button type="button" onclick="window.location.href='../produtos/page.html'" class="btn btn-primary">PRODUTOS</button>
+            <button type="button" class="btn btn-primary" onclick="openSidebar()">CARRINHO DE COMPRAS</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="produtos">
+            <h2 class="text-center">Produtos</h2>
+            <div class="row">
+                <!-- Varas de Pesca -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/varaBambu.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Vara de pesca de bambu</h5>
+                            <a href="#" class="btn btn-primary" data-price="20.00" onclick="addToCart(this)" data-name="Vara de pesca de bambu">R$ 20,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/varaCarb.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Vara de fibra de carbono</h5>
+                            <a href="#" class="btn btn-primary" data-price="25.00" onclick="addToCart(this)" data-name="Vara de fibra de carbono">R$ 25,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/varaMet.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Vara de pesca de metal</h5>
+                            <a href="#" class="btn btn-primary" data-price="30.00" onclick="addToCart(this)" data-name="Vara de pesca de metal">R$ 30,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/varaTele.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Vara de pesca telescopica</h5>
+                            <a href="#" class="btn btn-primary" data-price="40.00" onclick="addToCart(this)" data-name="Vara de pesca telescopica">R$ 40,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/varaVidr.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Vara de pesca fibra de vidro</h5>
+                            <a href="#" class="btn btn-primary" data-price="35.00" onclick="addToCart(this)" data-name="Vara de pesca fibra de vidro">R$ 35,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Linhas -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/linhaAzul.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Linha de pesca azul</h5>
+                            <a href="#" class="btn btn-primary" data-price="10.00" onclick="addToCart(this)" data-name="Linha de pesca azul">R$ 10,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/linhaDou.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Linha de pesca dourada</h5>
+                            <a href="#" class="btn btn-primary" data-price="15.00" onclick="addToCart(this)" data-name="Linha de pesca dourada">R$ 15,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/linhaLgtv.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Linha de pesca com multiplas cores</h5>
+                            <a href="#" class="btn btn-primary" data-price="12.00" onclick="addToCart(this)" data-name="Linha de pesca com multiplas cores">R$ 12,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Anzóis -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/anzol.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Anzol normal</h5>
+                            <a href="#" class="btn btn-primary" data-price="5.00" onclick="addToCart(this)" data-name="Anzol normal">R$ 5,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/anzolAnt.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Anzol anti-escape</h5>
+                            <a href="#" class="btn btn-primary" data-price="8.00" onclick="addToCart(this)" data-name="Anzol anti-escape">R$ 8,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/anzolIsc.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Anzol isca</h5>
+                            <a href="#" class="btn btn-primary" data-price="6.50" onclick="addToCart(this)" data-name="Anzol isca">R$ 6,50 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Iscas -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/iscaCamar.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Isca de camarão</h5>
+                            <a href="#" class="btn btn-primary" data-price="7.00" onclick="addToCart(this)" data-name="Isca de camarão">R$ 7,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/iscaInse.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Isca de inseto</h5>
+                            <a href="#" class="btn btn-primary" data-price="6.00" onclick="addToCart(this)" data-name="Isca de inseto">R$ 6,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/iscaMin.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Isca de minhoca</h5>
+                            <a href="#" class="btn btn-primary" data-price="5.50" onclick="addToCart(this)" data-name="Isca de minhoca">R$ 5,50 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Roupas -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/bota.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Botas</h5>
+                            <a href="#" class="btn btn-primary" data-price="50.00" onclick="addToCart(this)" data-name="Botas">R$ 50,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/calcinha.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Calça</h5>
+                            <a href="#" class="btn btn-primary" data-price="35.00" onclick="addToCart(this)" data-name="Calça">R$ 35,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/chapeu.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Chapéu</h5>
+                            <a href="#" class="btn btn-primary" data-price="20.00" onclick="addToCart(this)" data-name="Chapéu">R$ 20,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/colete.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Colete</h5>
+                            <a href="#" class="btn btn-primary" data-price="45.00" onclick="addToCart(this)" data-name="Colete">R$ 45,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/PAULO.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Caixa de pesca</h5>
+                            <a href="#" class="btn btn-primary" data-price="30.00" onclick="addToCart(this)" data-name="Caixa de pesca">R$ 30,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Caixas -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/bolsa.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Bolsa de pesca</h5>
+                            <a href="#" class="btn btn-primary" data-price="40.00" onclick="addToCart(this)" data-name="Bolsa de pesca">R$ 40,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../imagens/caixa.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Caixa de pesca</h5>
+                            <a href="#" class="btn btn-primary" data-price="25.00" onclick="addToCart(this)" data-name="Caixa de pesca">R$ 25,00 - Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+        <h2>Itens do Carrinho</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total">Total: R$ 0,00</div>
+        <button class="btn btn-success" onclick="limparCarrinho()">Limpar carrinho</button>
+    
+        <!-- Formulário de Compra -->
+        <div id="purchase-form">
+            <h2>Formulário de Compra</h2>
+            <form id="purchaseForm">
+                <div class="form-group">
+                    <label for="nomeCompra">Nome</label>
+                    <input type="text" class="form-control" id="nomeCompra" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailCompra">E-mail</label>
+                    <input type="email" class="form-control" id="emailCompra" required>
+                    <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+                </div>
+                <div class="form-group">
+                    <label for="telefoneCompra">Telefone</label>
+                    <input type="tel" class="form-control" id="telefoneCompra">
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="enviarCompra()">Enviar Compra</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        function openSidebar() {
+            document.getElementById("sidebar").style.width = "250px";
+        }
+    
+        function closeSidebar() {
+            document.getElementById("sidebar").style.width = "0";
+        }
+    
+        function addToCart(button) {
+            var itemName = button.getAttribute("data-name");
+            var itemPrice = parseFloat(button.getAttribute("data-price"));
+    
+            var item = {
+                name: itemName,
+                price: itemPrice
+            };
+    
+            var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            cartItems.push(item);
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    
+            updateCart();
+        }
+    
+        function updateCart() {
+            var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            var cartTotal = 0;
+            var cartHTML = "";
+    
+            cartItems.forEach(function (item) {
+                cartHTML += "<div>" + item.name + " - R$" + item.price.toFixed(2) + "</div>";
+                cartTotal += item.price;
+            });
+    
+            document.getElementById("cart-items").innerHTML = cartHTML;
+            document.getElementById("cart-total").innerHTML = "Total: R$" + cartTotal.toFixed(2);
+        }
+    
+        function limparCarrinho() {
+            localStorage.removeItem("cartItems");
+            updateCart();
+        }
+    
+        function enviarCompra() {
+            var nome = document.getElementById("nomeCompra").value;
+            var email = document.getElementById("emailCompra").value;
+            var telefone = document.getElementById("telefoneCompra").value;
+    
+            var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            var cartTotal = document.getElementById("cart-total").textContent;
+    
+            var mensagem = "Nome: " + nome + "%0AEmail: " + email + "%0ATelefone: " + telefone + "%0AItens do Carrinho: %0A";
+    
+            cartItems.forEach(function (item) {
+                mensagem += item.name + " - R$" + item.price.toFixed(2) + "%0A";
+            });
+    
+            var linkWhatsApp = "https://wa.me/554192787494?text=" + mensagem;
+    
+            window.open(linkWhatsApp, "_blank");
+        }
+    
+        window.onload = function () {
+            updateCart();
+        };
+    </script>
+    
+
+
+</body>
+</html>
