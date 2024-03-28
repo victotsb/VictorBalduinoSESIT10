@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competidor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../exe1/page.html">Exercício 1</a></li>
+                <li><a href="../exe2/page.html">Exercício 2</a></li>
+                <li><a href="../exe3/page.html">Exercício3</a></li>
+                <li><a href="../exe4/page.html">Exercício 4</a></li>
+                <li><a href="../exe5/page.html">Exercício 5</a></li>
+                <li><a href="../exe6/page.html">Exercício 6</a></li>
+                <li><a href="../exe7/page.html">Exercício 7</a></li>
+                <li><a href="../exe8/page.html">Exercício 8</a></li>
+                <li><a href="../exe9/page.html">Exercício 9</a></li>
+                <li><a href="../exe10/page.html">Exercício 10</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Cadastro de Competidor</h1>
+        <form id="competitorForm">
+            <label for="code">Código:</label>
+            <input type="number" id="code" name="code" required>
+            <label for="age">Idade:</label>
+            <input type="number" id="age" name="age" required>
+            <label for="height">Altura (em metros):</label>
+            <input type="number" id="height" name="height" step="0.01" required>
+            <label for="weight">Peso (em kg):</label>
+            <input type="number" id="weight" name="weight" step="0.01" required>
+            <button type="submit">Enviar</button>
+        </form>
+        
+        <div id="result"></div>
+    </div>
+    <img src="../Img/exe01.png" alt="Descrição da imagem">
+    <script src="script.js"></script>
+</body>
+</html>
