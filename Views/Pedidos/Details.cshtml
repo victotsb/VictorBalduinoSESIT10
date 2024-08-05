@@ -1,0 +1,120 @@
+@model marketplace.Models.Pedido
+
+@{
+    ViewData["Title"] = "Detalhes do Pedido";
+}
+
+<h2>Detalhes do Pedido</h2>
+
+<div>
+    <h4>Pedido</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Id
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Id
+        </dd>
+        <dt class="col-sm-2">
+            Data de Entrega
+        </dt>
+        <dd class="col-sm-10">
+            @Model.DataEntrega.ToShortDateString()
+        </dd>
+        <dt class="col-sm-2">
+            Status
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Status
+        </dd>
+        <dt class="col-sm-2">
+            Responsável
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Responsavel
+        </dd>
+        <dt class="col-sm-2">
+            Cliente
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Cliente.Nome
+        </dd>
+        <dt class="col-sm-2">
+            CPF do Cliente
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Cliente.CPF
+        </dd>
+        <dt class="col-sm-2">
+            Endereço do Cliente
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Cliente.Endereco
+        </dd>
+        <dt class="col-sm-2">
+            Telefone do Cliente
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Cliente.Telefone
+        </dd>
+        <dt class="col-sm-2">
+            Email do Cliente
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Cliente.Email
+        </dd>
+        <dt class="col-sm-2">
+            Fornecedor
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Fornecedor.Nome
+        </dd>
+        <dt class="col-sm-2">
+            Endereço do Fornecedor
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Fornecedor.Endereco
+        </dd>
+        <dt class="col-sm-2">
+            Margem de Desconto
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Fornecedor.MargemDesconto
+        </dd>
+        <dt class="col-sm-2">
+            Regime Fiscal
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Fornecedor.RegimeFiscal
+        </dd>
+        <dt class="col-sm-2">
+            CNPJ
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Fornecedor.CNPJ
+        </dd>
+        <dt class="col-sm-2">
+            Itens do Pedido
+        </dt>
+        <dd class="col-sm-10">
+            <ul>
+                @* Correção para o loop foreach *@
+                @if (Model.Itens.Any())
+                {
+                    foreach (var item in Model.Itens)
+                    {
+                        <li>@item.Nome - @item.Valor.ToString("C")</li>
+                    }
+                }
+                else
+                {
+                    <li>Não há itens para este pedido.</li>
+                }
+            </ul>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>

@@ -1,0 +1,33 @@
+@model IEnumerable<marketplace.Models.Pedido>
+
+@{
+    ViewData["Title"] = "Pedidos";
+}
+
+<h2>Pedidos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Status</th>
+            <th>Data de Entrega</th>
+            <th>Responsável</th>
+            <th>Cliente</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var pedido in Model)
+{
+        <tr>
+            <td>@pedido.Id</td>
+            <td>@pedido.Status</td>
+            <td>@pedido.DataEntrega.ToShortDateString()</td>
+            <td>@pedido.Responsavel</td>
+            <td>@pedido.Cliente.Nome</td>
+            <td><a asp-action="Details" asp-route-id="@pedido.Id">Detalhes</a></td>
+        </tr>
+}
+    </tbody>
+</table>
