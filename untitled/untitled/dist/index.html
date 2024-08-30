@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+    <header>
+        <img src="https://picsum.photos/120" alt="Imagem de Perfil de Victor Da Silva Balduino" class="profile-image" loading="lazy">
+        <h1>Victor Da Silva Balduino</h1>
+        <p>Estudante | Programador</p>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>Sobre Mim</h2>
+            <p>Sou um estudante apaixonado por programação e tecnologia. Tenho experiência em várias linguagens de programação e estou sempre em busca de novos desafios e oportunidades para crescer profissionalmente.</p>
+            <button class="toggle-button" aria-expanded="false" aria-controls="aboutContent" onclick="toggleSection('aboutContent', this)">Mostrar Detalhes</button>
+            <div id="aboutContent" class="hidden" aria-hidden="true">
+                <p>Detalhes adicionais sobre minha experiência e projetos. Tenho habilidades em desenvolvimento web, software, e estou sempre atualizado com as últimas tendências da tecnologia.</p>
+            </div>
+        </section>
+
+        <section id="datetime">
+            <h2>Data e Hora Atual</h2>
+            <p id="currentDatetime"></p>
+        </section>
+
+        <section id="contact">
+            <h2>Contato</h2>
+            <form id="contactForm">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required aria-required="true" aria-label="Nome completo">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required aria-required="true" aria-label="Endereço de email">
+                
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required aria-required="true" aria-label="Mensagem"></textarea>
+                
+                <button type="submit">Enviar</button>
+                <p id="formMessage" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Victor Da Silva Balduino. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
