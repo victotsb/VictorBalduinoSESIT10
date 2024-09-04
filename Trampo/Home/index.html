@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Da Silva Balduino - Página Inicial</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearSpan = document.getElementById('currentYear');
+            const currentYear = new Date().getFullYear();
+            yearSpan.textContent = currentYear;
+
+            function updateDatetime() {
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                document.getElementById('currentDatetime').textContent = now.toLocaleDateString('pt-BR', options);
+            }
+
+            updateDatetime();
+            setInterval(updateDatetime, 1000); // Atualiza a cada segundo
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="https://picsum.photos/120" alt="Imagem de Perfil de Victor Da Silva Balduino" class="profile-image" loading="lazy">
+            <h1>Victor Da Silva Balduino</h1>
+            <p>Estudante | Programador</p>
+            <nav>
+                <ul class="navigation-links">
+                    <li><a href="/Home/index.html">Home</a></li>
+                    <li><a href="/Sobre_Mim/index.html">Sobre Mim</a></li>
+                    <li><a href="/Portfolio/index.html">Portfólio</a></li>
+                    <li><a href="/Objetivos/index.html">Objetivos</a></li>
+                    <li><a href="/Contato/index.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>Bem-vindo ao Meu Site!</h2>
+            <p>Olá! Sou Victor Da Silva Balduino, um estudante apaixonado por programação e tecnologia. Aqui você encontrará informações sobre mim, meu portfólio, objetivos e formas de entrar em contato.</p>
+            <a href="/Sobre_Mim/index.html" class="cta-button">Saiba Mais</a>
+        </section>
+
+        <section id="datetime">
+            <h2>Data e Hora Atual</h2>
+            <p id="currentDatetime" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Victor Da Silva Balduino. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
