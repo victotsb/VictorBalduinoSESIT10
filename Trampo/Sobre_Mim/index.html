@@ -5,20 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victor Da Silva Balduino - Sobre Mim</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearSpan = document.getElementById('currentYear');
+            const currentYear = new Date().getFullYear();
+            yearSpan.textContent = currentYear;
+        });
+    </script>
 </head>
 <body>
     <header>
-        <img src="https://picsum.photos/120" alt="Imagem de Perfil de Victor Da Silva Balduino" class="profile-image" loading="lazy">
-        <h1>Victor Da Silva Balduino</h1>
-        <nav>
-            <ul class="navigation-links">
-                <li><a href="/Home/index.html">Home</a></li>
-                <li><a href="/Sobre_Mim/index.html">Sobre Mim</a></li>
-                <li><a href="/Portfolio/index.html">Portfólio</a></li>
-                <li><a href="/Objetivos/index.html">Objetivos</a></li>
-                <li><a href="/Contato/index.html">Contato</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <img src="https://picsum.photos/120" alt="Imagem de Perfil de Victor Da Silva Balduino" class="profile-image" loading="lazy">
+            <h1>Victor Da Silva Balduino</h1>
+            <nav>
+                <ul class="navigation-links">
+                    <li><a href="/Home/index.html">Home</a></li>
+                    <li><a href="/Sobre_Mim/index.html" class="active">Sobre Mim</a></li>
+                    <li><a href="/Portfolio/index.html">Portfólio</a></li>
+                    <li><a href="/Objetivos/index.html">Objetivos</a></li>
+                    <li><a href="/Contato/index.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -26,20 +35,20 @@
             <div class="container">
                 <h2>Sobre Mim</h2>
                 <div class="about-content">
-                    <div class="about-text">
+                    <article class="about-text">
                         <h3>Biografia</h3>
                         <p>Olá, sou Victor Da Silva Balduino, um entusiasta da tecnologia e estudante dedicado. Desde jovem, sempre tive um fascínio por como as coisas funcionam e, ao longo dos anos, meu interesse evoluiu para o campo da programação e desenvolvimento de software. Com uma formação sólida em ciência da computação e experiência prática em vários projetos, estou constantemente em busca de novas oportunidades para aprender e crescer profissionalmente.</p>
                         <p>Minha jornada começou na escola, onde comecei a explorar a programação por conta própria. Ao longo dos anos, participei de diversos cursos e workshops que me permitiram aprimorar minhas habilidades e adquirir conhecimento prático. Além disso, trabalhei em projetos pessoais e colaborativos que me proporcionaram experiência valiosa no desenvolvimento de aplicativos e soluções tecnológicas.</p>
                         <p>Atualmente, estou focado em aprimorar minhas habilidades e expandir meu conhecimento em áreas como inteligência artificial, desenvolvimento web e aplicativos móveis. Estou sempre buscando maneiras de aplicar minha paixão pela tecnologia para resolver problemas reais e criar soluções inovadoras.</p>
-                    </div>
-                    <div class="about-interests">
+                    </article>
+                    <aside class="about-interests">
                         <h3>Interesses</h3>
                         <ul>
                             <li><strong>Jogos:</strong> Sou um entusiasta de jogos, tanto digitais quanto de mesa, que me permitem relaxar e me divertir.</li>
                             <li><strong>Esportes:</strong> Gosto de praticar esportes, especialmente corridas e atividades ao ar livre, para manter um equilíbrio saudável.</li>
                             <li><strong>Viagens:</strong> Sempre que possível, gosto de explorar novos lugares e culturas, o que me inspira e me proporciona novas perspectivas.</li>
                         </ul>
-                    </div>
+                    </aside>
                 </div>
             </div>
         </section>

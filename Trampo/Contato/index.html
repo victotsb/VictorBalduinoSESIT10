@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Victor Da Silva Balduino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="https://picsum.photos/120" alt="Imagem de Perfil de Victor Da Silva Balduino" class="profile-image" loading="lazy">
+            <h1>Victor Da Silva Balduino</h1>
+            <nav>
+                <ul class="navigation-links">
+                    <li><a href="/Home/index.html">Home</a></li>
+                    <li><a href="/Sobre_Mim/index.html">Sobre Mim</a></li>
+                    <li><a href="/Portfolio/index.html">Portfólio</a></li>
+                    <li><a href="/Objetivos/index.html">Objetivos</a></li>
+                    <li><a href="/Contato/index.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="contact">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+
+                <form class="contact-form" onsubmit="sendWhatsAppMessage(event)">
+                    <fieldset>
+                        <legend>Formulário de Contato</legend>
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" placeholder="Seu Nome" required aria-required="true">
+
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="Seu E-mail" required aria-required="true">
+
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Sua Mensagem" required aria-required="true"></textarea>
+
+                        <button type="submit">Enviar</button>
+                    </fieldset>
+                </form>
+
+                <div class="contact-info">
+                    <h3>Ou entre em contato através das redes sociais:</h3>
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/s.b_victor" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="mailto:victorbalduino755@gmail.com">E-mail</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Victor Da Silva Balduino. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function sendWhatsAppMessage(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+
+            // Obter os valores do formulário
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            // Número de telefone para onde a mensagem será enviada (inclua o código do país, ex: +55 para Brasil)
+            const phoneNumber = "992787494";
+
+            // Montar a mensagem para o WhatsApp
+            const whatsappMessage = `Olá, meu nome é ${name}%0A` +
+                                    `E-mail: ${email}%0A` +
+                                    `Mensagem: ${message}`;
+
+            // Criar a URL para redirecionar ao WhatsApp
+            const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+
+            // Redirecionar o usuário para o WhatsApp
+            window.open(whatsappURL, "_blank");
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearSpan = document.getElementById('currentYear');
+            yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

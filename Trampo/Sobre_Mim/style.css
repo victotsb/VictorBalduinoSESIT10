@@ -23,7 +23,7 @@
 
 body {
     font-family: var(--font-family);
-    background: var(--background-color);
+    background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
     font-size: var(--font-size-base);
@@ -95,7 +95,8 @@ h2 {
     transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
-.navigation-links a:hover {
+.navigation-links a:hover,
+.navigation-links a.active {
     background-color: var(--hover-color);
 }
 
@@ -136,10 +137,7 @@ section:hover {
     gap: 20px;
 }
 
-.about-text {
-    font-size: var(--font-size-lg);
-}
-
+.about-text,
 .about-interests {
     font-size: var(--font-size-lg);
 }
@@ -158,6 +156,24 @@ section:hover {
     max-width: 100%;
     border-radius: var(--border-radius);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-top: 5px solid var(--hover-color);
+    transition: background-color var(--transition-speed);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
 }
 
 /* Responsividade */

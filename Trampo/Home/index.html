@@ -13,7 +13,15 @@
 
             function updateDatetime() {
                 const now = new Date();
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                const options = { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric', 
+                    hour: '2-digit', 
+                    minute: '2-digit', 
+                    second: '2-digit' 
+                };
                 document.getElementById('currentDatetime').textContent = now.toLocaleDateString('pt-BR', options);
             }
 
@@ -30,11 +38,11 @@
             <p>Estudante | Programador</p>
             <nav>
                 <ul class="navigation-links">
-                    <li><a href="/Home/index.html">Home</a></li>
-                    <li><a href="/Sobre_Mim/index.html">Sobre Mim</a></li>
-                    <li><a href="/Portfolio/index.html">Portfólio</a></li>
-                    <li><a href="/Objetivos/index.html">Objetivos</a></li>
-                    <li><a href="/Contato/index.html">Contato</a></li>
+                    <li><a href="/Home/index.html" aria-label="Página inicial">Home</a></li>
+                    <li><a href="/Sobre_Mim/index.html" aria-label="Sobre mim">Sobre Mim</a></li>
+                    <li><a href="/Portfolio/index.html" aria-label="Portfólio">Portfólio</a></li>
+                    <li><a href="/Objetivos/index.html" aria-label="Objetivos">Objetivos</a></li>
+                    <li><a href="/Contato/index.html" aria-label="Contato">Contato</a></li>
                 </ul>
             </nav>
         </div>

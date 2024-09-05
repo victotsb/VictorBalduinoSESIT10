@@ -1,4 +1,4 @@
-/* style.css */
+/* Variáveis de Cores e Estilos */
 :root {
     --background-color: #f4f4f4;
     --primary-color: #007BFF;
@@ -6,21 +6,28 @@
     --border-radius: 8px;
     --transition-speed: 0.3s;
     --text-color: #333;
+    --header-font-size: 2.5em;
+    --nav-font-size: 1em;
+    --portfolio-item-width: calc(50% - 20px);
 }
 
+/* Estilos Globais */
 body {
     font-family: Arial, sans-serif;
     background-color: var(--background-color);
     margin: 0;
     padding: 0;
     color: var(--text-color);
+    line-height: 1.6;
 }
 
+/* Cabeçalho */
 header {
     background-color: var(--primary-color);
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -37,17 +44,18 @@ header {
     width: 120px;
     height: 120px;
     margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: var(--header-font-size);
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0 0 0;
+    margin: 10px 0 0;
 }
 
 nav ul li {
@@ -59,13 +67,16 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    font-size: var(--nav-font-size);
     transition: color var(--transition-speed);
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
     color: var(--hover-color);
 }
 
+/* Conteúdo Principal */
 main {
     padding: 20px;
 }
@@ -85,8 +96,10 @@ h2 {
     font-size: 2.5em;
     color: var(--primary-color);
     margin-bottom: 40px;
+    text-transform: uppercase;
 }
 
+/* Portfólio */
 .portfolio-items {
     display: flex;
     flex-wrap: wrap;
@@ -99,7 +112,7 @@ h2 {
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: calc(50% - 20px);
+    width: var(--portfolio-item-width);
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 
@@ -147,16 +160,25 @@ h2 {
     transform: scale(1.05);
 }
 
+/* Rodapé */
 footer {
+    text-align: center;
+    padding: 20px;
     background-color: var(--primary-color);
     color: #fff;
-    text-align: center;
-    padding: 10px;
+    border-top: 5px solid var(--hover-color);
+    transition: background-color var(--transition-speed);
     position: fixed;
     width: 100%;
     bottom: 0;
 }
 
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
     .portfolio-item {
         width: 100%;

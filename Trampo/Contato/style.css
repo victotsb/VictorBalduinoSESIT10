@@ -1,0 +1,223 @@
+/* Variáveis de Cores e Fontes */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #e0eafc;
+    --hover-color: #0056b3;
+    --text-color: #333;
+    --background-color: #f4f6f9;
+    --dark-bg-color: #1a1a1a;
+    --dark-text-color: #e5e5e5;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-size-base: 16px;
+    --font-size-lg: 1.2rem;
+    --transition-speed: 0.3s;
+    --border-radius: 8px;
+}
+
+/* Modo Escuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: var(--dark-bg-color);
+        --text-color: var(--dark-text-color);
+    }
+
+    body {
+        background-color: var(--dark-bg-color);
+        color: var(--dark-text-color);
+    }
+
+    header, footer {
+        background-color: #333;
+        border-color: #444;
+    }
+
+    section {
+        background-color: #2c2c2c;
+    }
+
+    input[type="text"], input[type="email"], textarea {
+        background-color: #444;
+        color: var(--dark-text-color);
+        border-color: #555;
+    }
+
+    input:focus, textarea:focus {
+        border-color: var(--hover-color);
+    }
+}
+
+/* Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: var(--font-size-base);
+    margin: 0;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* Cabeçalho */
+header {
+    background: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 2em 1em;
+    border-bottom: 5px solid var(--hover-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border: 3px solid #fff;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.profile-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    margin: 0.5em 0;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/* Navegação */
+.navigation-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.navigation-links li {
+    margin: 0 15px;
+}
+
+.navigation-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.navigation-links a:hover {
+    background-color: var(--hover-color);
+}
+
+/* Main */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* Seções */
+section {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Botões */
+.cta-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 15px 30px;
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-top: 5px solid var(--hover-color);
+    transition: background-color var(--transition-speed);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navigation-links {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .navigation-links li {
+        margin: 10px 0;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .cta-button {
+        font-size: 1em;
+        padding: 12px 24px;
+    }
+
+    section {
+        padding: 20px;
+    }
+}

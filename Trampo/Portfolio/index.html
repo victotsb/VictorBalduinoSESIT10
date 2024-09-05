@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio de Victor Da Silva Balduino</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="header-container">
@@ -15,7 +17,7 @@
                 <ul class="navigation-links">
                     <li><a href="/Home/index.html">Home</a></li>
                     <li><a href="/Sobre_Mim/index.html">Sobre Mim</a></li>
-                    <li><a href="/Portfolio/index.html">Portfólio</a></li>
+                    <li><a href="/Portfolio/index.html" class="active">Portfólio</a></li>
                     <li><a href="/Objetivos/index.html">Objetivos</a></li>
                     <li><a href="/Contato/index.html">Contato</a></li>
                 </ul>
@@ -29,41 +31,44 @@
                 <h2>Portfólio</h2>
                 <div class="portfolio-items">
                     <!-- Projeto 1 -->
-                    <div class="portfolio-item">
-                        <img src="https://picsum.photos/400/300?random=1" alt="Captura de Tela do Projeto 1">
+                    <article class="portfolio-item">
+                        <img src="https://picsum.photos/400/300?random=1" alt="Captura de Tela do Projeto 1" class="portfolio-image">
                         <div class="portfolio-info">
                             <h3>Aplicação de Gerenciamento de Tarefas</h3>
                             <p>Desenvolvi uma aplicação web para gerenciamento de tarefas com recursos de autenticação, CRUD (Create, Read, Update, Delete), e integração com APIs externas para notificações. A interface foi projetada para ser intuitiva e responsiva, permitindo aos usuários gerenciar suas tarefas de forma eficiente.</p>
-                            <a href="https://example.com/projeto1" class="cta-button">Ver Projeto</a>
+                            <a href="https://example.com/projeto1" class="cta-button" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
                         </div>
-                    </div>
+                    </article>
+
                     <!-- Projeto 2 -->
-                    <div class="portfolio-item">
-                        <img src="https://picsum.photos/400/300?random=2" alt="Captura de Tela do Projeto 2">
+                    <article class="portfolio-item">
+                        <img src="https://picsum.photos/400/300?random=2" alt="Captura de Tela do Projeto 2" class="portfolio-image">
                         <div class="portfolio-info">
                             <h3>API para Integração com Sistemas Externos</h3>
                             <p>Criei uma API robusta para integração com sistemas externos, utilizando autenticação OAuth e fornecendo documentação detalhada com Swagger. A API foi projetada para ser escalável e segura, facilitando a integração com outras aplicações e serviços.</p>
-                            <a href="https://example.com/projeto2" class="cta-button">Ver Projeto</a>
+                            <a href="https://example.com/projeto2" class="cta-button" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
                         </div>
-                    </div>
+                    </article>
+
                     <!-- Projeto 3 -->
-                    <div class="portfolio-item">
-                        <img src="https://picsum.photos/400/300?random=3" alt="Captura de Tela do Projeto 3">
+                    <article class="portfolio-item">
+                        <img src="https://picsum.photos/400/300?random=3" alt="Captura de Tela do Projeto 3" class="portfolio-image">
                         <div class="portfolio-info">
                             <h3>Site de E-commerce</h3>
                             <p>Desenvolvi um site de e-commerce completo, com funcionalidades de carrinho de compras, processamento de pagamentos e gerenciamento de produtos. A plataforma foi construída utilizando tecnologias modernas para garantir uma experiência de usuário fluida e segura.</p>
-                            <a href="https://example.com/projeto3" class="cta-button">Ver Projeto</a>
+                            <a href="https://example.com/projeto3" class="cta-button" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
                         </div>
-                    </div>
+                    </article>
+
                     <!-- Projeto 4 -->
-                    <div class="portfolio-item">
-                        <img src="https://picsum.photos/400/300?random=4" alt="Captura de Tela do Projeto 4">
+                    <article class="portfolio-item">
+                        <img src="https://picsum.photos/400/300?random=4" alt="Captura de Tela do Projeto 4" class="portfolio-image">
                         <div class="portfolio-info">
                             <h3>Blog de Tecnologia</h3>
                             <p>Criei um blog de tecnologia com sistema de gerenciamento de conteúdo (CMS) personalizado. Inclui recursos como publicação de posts, categorização, e sistema de comentários. A plataforma é otimizada para SEO e projetada para ser fácil de usar.</p>
-                            <a href="https://example.com/projeto4" class="cta-button">Ver Projeto</a>
+                            <a href="https://example.com/projeto4" class="cta-button" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -74,11 +79,11 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
             const yearSpan = document.getElementById('currentYear');
-            const currentYear = new Date().getFullYear();
-            yearSpan.textContent = currentYear;
+            yearSpan.textContent = new Date().getFullYear();
         });
     </script>
 </body>
+
 </html>
