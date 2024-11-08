@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Barra de navegação -->
+    <nav class="navbar" role="navigation" aria-label="Navegação principal">
+        <h1>Gerenciamento de Tarefas</h1>
+        <ul>
+            <li><a href="index1.html" aria-label="Ir para cadastro de usuários" tabindex="0">Cadastro de Usuários</a></li>
+            <li><a href="index2.html" aria-label="Ir para cadastro de tarefas" tabindex="0">Cadastro de Tarefas</a></li>
+            <li><a href="index3.html" aria-label="Ir para gerenciar tarefas" tabindex="0">Gerenciar Tarefas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cabeçalho principal -->
+    <header>
+        <h1>Gerenciamento de Tarefas</h1>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <section class="task-board" aria-labelledby="taskBoardTitle">
+            <h2 id="taskBoardTitle" class="sr-only">Quadro de Tarefas</h2> <!-- Acessibilidade - título oculto -->
+            
+            <!-- Quadro A Fazer -->
+            <div class="task-column" id="todo-column" aria-live="polite">
+                <h3>A Fazer</h3>
+                <div class="task-list" id="todo-list">
+                    <!-- Tarefas "A Fazer" serão carregadas aqui -->
+                </div>
+            </div>
+
+            <!-- Quadro Fazendo -->
+            <div class="task-column" id="in-progress-column" aria-live="polite">
+                <h3>Fazendo</h3>
+                <div class="task-list" id="inprogress-list">
+                    <!-- Tarefas "Fazendo" serão carregadas aqui -->
+                </div>
+            </div>
+
+            <!-- Quadro Pronto -->
+            <div class="task-column" id="done-column" aria-live="polite">
+                <h3>Pronto</h3>
+                <div class="task-list" id="done-list">
+                    <!-- Tarefas "Pronto" serão carregadas aqui -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Exclusão -->
+    <div id="deleteModal" class="modal" role="dialog" aria-labelledby="deleteModalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <h2 id="deleteModalTitle">Confirmar Exclusão</h2>
+            <p>Você tem certeza que deseja excluir esta tarefa?</p>
+            <button id="confirmDelete" class="modal-btn" aria-label="Confirmar exclusão da tarefa" tabindex="0" onclick="excluirTarefa()">Confirmar</button>
+            <button id="cancelDelete" class="modal-btn" aria-label="Cancelar exclusão da tarefa" tabindex="0" onclick="fecharModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Gerenciamento de Tarefas. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script3.js"></script>
+</body>
+</html>

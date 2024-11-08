@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>Gerenciamento de Tarefas</h1>
+        <ul>
+            <li><a href="index1.html" aria-label="Ir para Cadastro de Usuários">Cadastro de Usuários</a></li>
+            <li><a href="index2.html" aria-label="Ir para Cadastro de Tarefas">Cadastro de Tarefas</a></li>
+            <li><a href="index3.html" aria-label="Ir para Gerenciar Tarefas">Gerenciar Tarefas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Cadastro de Usuário</h2>
+        <form id="formCadastroUsuario" novalidate>
+            <!-- Nome -->
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required aria-describedby="nomeError">
+                <span id="nomeError" class="error" role="alert" aria-live="assertive"></span>
+            </div>
+
+            <!-- E-mail -->
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required aria-describedby="emailError" 
+                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                <span id="emailError" class="error" role="alert" aria-live="assertive"></span>
+            </div>
+
+            <!-- Senha -->
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required aria-describedby="senhaError">
+                <span id="senhaError" class="error" role="alert" aria-live="assertive"></span>
+            </div>
+
+            <!-- Botão de Submissão -->
+            <button type="submit" class="submit-btn">Cadastrar</button>
+        </form>
+
+        <!-- Mensagem de Confirmação -->
+        <p id="mensagemCadastro"></p>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
